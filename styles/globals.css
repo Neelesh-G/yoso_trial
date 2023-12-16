@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+    .hoverEffect{
+        @apply cursor-pointer hover:bg-gray-200 rounded-full p-3 
+    }
+    .cursorEffect{
+        @apply cursor-pointer hover:bg-gray-50;
+    }
+
+}
