@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Sidebar from '../components/Sidebar'
 import Qfeed from '../components/Qfeed'
+import Widgets from '../components/Widgets'
 
 export default function Home() {
   return (
