@@ -38,7 +38,9 @@ export default function Post({post}) {
     }
     async function deletePost(){
         deleteDoc(doc(db, "posts", post.id))
+        if(post.data().image){
         deleteObject(doc(storage, `posts/${post.id}/image`))
+        }
     }
   return (
     <div className="flex p-3 cursor-pointer border-b border-gray-200">
