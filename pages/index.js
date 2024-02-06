@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Sidebar from '../components/Sidebar'
 import Qfeed from '../components/Qfeed'
 import Widgets from '../components/Widgets'
+import CommentModal from '../components/CommentModal'
 
 export default function Home() {
   return (
@@ -24,6 +25,8 @@ export default function Home() {
       <Widgets/>
 
       {/*Modal*/}
+      <CommentModal/>
+
 
       </main>
 
