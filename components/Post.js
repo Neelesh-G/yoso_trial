@@ -11,6 +11,7 @@ import {modalState, postIdState} from "../atom/modalAtom"
 export default function Post({post}) {
     const {data:session}=useSession()
     const [likes, setLikes]=useState([])
+    const [comments, setComments]=useState([])
     const [hasLiked, setHasLiked]=useState(false)
     const [open, setOpen]=useRecoilState(modalState)
     const [postId, setpostId]=useRecoilState(postIdState)
@@ -21,13 +22,18 @@ export default function Post({post}) {
     },[db])
 
     useEffect(()=>{
+        const unsubscribe=onSnapshot(
+            collection(db, "posts", post.id, "comments"), (snapshot)=>setComments(snapshot.docs)
+        )
+    },[db])
+
+    useEffect(()=>{
         setHasLiked(likes.findIndex((like) => like.id === session?.user.uid) !== -1);
     }, [likes])
     async function likepost(){
         if(session){
             if(hasLiked){
                 await deleteDoc(doc(db, "posts", post.id, "likes", session?.user.uid))
-    
             }
             else{
                 await setDoc(doc(db, "posts", post.id, "likes", session?.user.uid), {
@@ -51,7 +57,7 @@ export default function Post({post}) {
         {/*image*/}
         <img className="h-11 w-11 rounded-full cursor-pointer mr-4" src={post.data().userImg} alt="user-img"/>
         {/*right side*/}
-        <div className="">
+        <div className="flex-1">
             {/*Header*/}
             <div className="flex item-center justify-between">
                 {/*post user info*/}
@@ -69,6 +75,8 @@ export default function Post({post}) {
             <img className="rounded-2xl mr-2" src={post.data().image} alt=""/>
             {/*icons*/}
             <div className="flex justify-between text-gray-500 p-2">
+                
+                <div className="flex items-center select-none">
                 <ChatIcon onClick={()=>{
                     if(!session){
                         signIn()
@@ -78,6 +86,10 @@ export default function Post({post}) {
                 }
                 }}  
                     className="h-5 w-5 hover:text-sky-700 hover:bg-sky-100 hover:rounded-full"/>
+                {comments.length>0&&(
+                    <span className="text-sm">{comments.length}</span>
+                )}
+                </div>
                 {session?.user.uid===post?.data().id&&(
                     <TrashIcon onClick={deletePost} className="h-5 w-5 hover:text-red-700 hover:bg-red-100 hover:rounded-full"/>
                 )}
