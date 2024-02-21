@@ -1,9 +1,8 @@
-import Head from 'next/head';
-import Sidebar from '../components/Sidebar';
-import Qfeed from '../components/Qfeed';
-import Widgets from '../components/Widgets';
-import Input from '../components/Input'; // Make sure to import Input here
-import CommentModal from '../components/CommentModal';
+import Head from 'next/head'
+import Sidebar from '../components/Sidebar'
+import Qfeed from '../components/Qfeed'
+import Widgets from '../components/Widgets'
+
 
 export default function Home() {
   return (
@@ -14,27 +13,23 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen max-w-7xl mx-auto">
-        {/* Sidebar */}
-        <Sidebar />
+        
+      {/*Sidebar*/}
+      <Sidebar/>
 
-        {/* Main content area for Qfeed */}
-        <div className="flex-grow">
-          <Qfeed />
-          {/* Input is moved here and positioned at the bottom */}
-        </div>
+      {/*Feed*/}
+      <Qfeed/>
 
-        {/* Widgets */}
-        <Widgets />
+
+      {/*Widgets*/}
+      <Widgets/>
+
+    
+
+
       </main>
-      
-      {/* Fixed Input at the bottom of the screen */}
-      {/* This positions the Input component at the bottom. Adjust the className for styling as needed. */}
-      <div className="fixed bottom-0 left-0 right-0 mx-auto">
-        <Input />
-      </div>
 
-      {/* Comment Modal */}
-      <CommentModal />
+
     </div>
-  );
+  )
 }

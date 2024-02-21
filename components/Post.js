@@ -8,6 +8,7 @@ import {useState, useEffect} from "react"
 import { deleteObject } from "firebase/storage";
 import { useRecoilState } from "recoil";
 import {modalState, postIdState} from "../atom/modalAtom" 
+
 export default function Post({post}) {
     const {data:session}=useSession()
     const [likes, setLikes]=useState([])
@@ -15,6 +16,11 @@ export default function Post({post}) {
     const [hasLiked, setHasLiked]=useState(false)
     const [open, setOpen]=useRecoilState(modalState)
     const [postId, setpostId]=useRecoilState(postIdState)
+    const readableEndDate = new Date(post?.data().projectEndDate).toLocaleDateString('en-US', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric',
+      });
     useEffect(()=>{
         const unsubscribe=onSnapshot(
             collection(db, "posts", post.id, "likes"), (snapshot)=>setLikes(snapshot.docs)
@@ -69,8 +75,18 @@ export default function Post({post}) {
                 {/*dot icon*/}
                 <DotsHorizontalIcon className="h-10 w-10 hoverEffect hover:bg-sky-100 hover:text-sky-500 p-2"/>
             </div>
-            {/*post text*/}
-            <p className="text-gray-800 text-[15px] sm:text-[16px] mb-2 ">{post.data().text}</p>
+            {/*post Project Title*/}
+            {/*<p className="text-gray-800 text-[15px] sm:text-[16px] mb-2 ">{post.data().projectTitle}</p>*/}
+            <p className="text-gray-800  text-xl font-bold mb-2 ">{post.data().projectTitle}</p>
+            {/*post Project Description*/}
+            <p className="text-gray-800 text-[15px] sm:text-[16px] mb-2 ">{post.data().projectDescription}</p>
+            {/*End Date*/}
+            <p className="text-gray-800 text-[15px] sm:text-[16px] mb-2 ">
+            <span className="font-bold">Timeline:</span> {readableEndDate}
+            </p>
+
+
+
             {/*post image*/}
             <img className="rounded-2xl mr-2" src={post.data().image} alt=""/>
             {/*icons*/}
