@@ -2,9 +2,10 @@
 import { useRecoilValue } from 'recoil';
 import { postsState } from '../../atom/modalAtom';
 import { TrashIcon } from '@heroicons/react/solid';
-import {modalState, postIdState} from "../../atom/modalAtom"
+import {modalState, postIdState, projectIdState} from "../../atom/modalAtom"
 import { useRouter } from "next/router"
 import {useRecoilState } from "recoil"
+
 
 import Sidebar from '../../components/Sidebar'
 import React, { useEffect, useState, useRef  } from 'react';
@@ -20,6 +21,7 @@ import 'ag-grid-community/styles/ag-theme-alpine.css';
 
 export default function ProjectList() {
   const [p, setP] = useState([]);
+  const [projectId, setprojectId]=useRecoilState(projectIdState)
  
  // const p = useRecoilValue(postsState);
   //console.log("row_data", p);
@@ -29,7 +31,7 @@ export default function ProjectList() {
   const { data: session } = useSession();
   const [gridApi, setGridApi] = useState(null);
 
-  const [postId]=useRecoilState(postIdState)
+  
   const router=useRouter()
   
   
@@ -101,6 +103,15 @@ export default function ProjectList() {
   }, [p]); // This effect runs whenever the posts data changes*/}
 
 
+
+
+
+
+
+
+
+
+
   const onGridReady = (params) => {
     setGridApi(params.api); // Save the grid API for later use
     console.log("Grid is ready", params.api);
@@ -110,7 +121,21 @@ export default function ProjectList() {
   
 
   const columns = [
-    { headerName: "Title", field: "title", sortable: true,floatingFilter:true, flex: 1, 
+    { headerName: "Title", field: "title", cellRenderer: function(params) {
+      const onTitleClick = () => {
+        console.log("Project title clicked", params.data.id);
+        // Example: navigate to the project's detail page
+
+       // router.push(`/project/${params.data.id}`);
+       
+       setprojectId(params.data.id)
+       console.log("postid is",projectId)
+       router.push(`posts/${projectId}`)
+      };
+      return (<a href="#" onClick={onTitleClick} style={{ textDecoration: 'underline' }}>
+      {params.value}
+  </a>)
+    }, sortable: true,floatingFilter:true, flex: 1, 
      cellStyle: { fontSize: '16px'} },
     { headerName: "Description", field: "description", sortable: true, floatingFilter:true, flex: 3,
      cellStyle: { fontSize: '16px' } },
