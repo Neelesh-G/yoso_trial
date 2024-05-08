@@ -1,6 +1,10 @@
 import {getProviders, signIn} from "next-auth/react"
 
 export default function signin({providers}) {
+
+    if (!providers) {
+        return <p>No providers available or providers data failed to load.</p>;
+      }
   return (
     
         
