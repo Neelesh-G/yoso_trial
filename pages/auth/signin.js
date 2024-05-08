@@ -30,12 +30,45 @@ export default function signin({providers}) {
   )
 }
 
+
+
+/*
 export async function getServerSideProps()
 {
+
+    
     const providers= await getProviders();
     return{
         props:{
             providers,
         },
     }
+}*/
+
+
+import { getProviders } from "next-auth/react";
+
+export async function getServerSideProps(context) {
+    let providers = null;
+    try {
+        providers = await getProviders();
+        if (!providers) {
+            throw new Error('No authentication providers found.');
+        }
+    } catch (error) {
+        console.error('Failed to fetch providers:', error);
+        // Optionally, return an error message to display or handle it in the component
+        return {
+            props: {
+                error: 'Failed to fetch authentication providers.'
+            },
+        };
+    }
+
+    return {
+        props: {
+            providers,
+        },
+    };
 }
+
