@@ -69,20 +69,23 @@ export default function Project() {
 
 
     const sendProjectInfo = async () => {
-
+        console.log("hello");
+        console.log("user id is:", session.user.name);
         try {
+
              const docRef = await addDoc(collection(db, "posts"), {
+                
                 id:session.user.uid,
                 projectTitle: projectTitle, 
                 projectDescription:projectDescription,
                 projectStartDate:projectStartDate,
                 projectEndDate:projectEndDate,
-
                 name: session.user.name, 
                 username: session.user.username, 
                 userImg:session.user.image, 
                 timestamp: serverTimestamp(), 
             });
+            console.log("hello1");
 
             console.log("Document written with ID: ", docRef.id);
             setProjectTitle("");

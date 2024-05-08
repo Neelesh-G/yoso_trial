@@ -27,7 +27,7 @@ import {modalState_email} from "../../atom/modalAtom"
 
 
 
-export default function feed_post() {
+export default function FeedPost() {
   const router=useRouter()
   const {id} = router.query
   const [post, setPost]=useState(null)
