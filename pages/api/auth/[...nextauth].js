@@ -28,6 +28,8 @@ export const authOptions = {
     signIn:"/auth/signin"
   },
 
+  secret:process.env.SECRET,
+
   callbacks:{
 /*
     async jwt({ token, user }) {
