@@ -65,7 +65,7 @@ import { uploadString, ref, getDownloadURL } from "firebase/storage"
         <div className="w-full divide-y divide-gray-200">
             <div className="">
               <textarea className="w-full border-none focus:ring-0 text-lg tracking-wide min-h-[50px] text-gray-700" rows="2" 
-              placeholder="Add Your Project" 
+              placeholder="Congratulate your peers" 
               value={input}
               onChange={(e)=>setInput(e.target.value)}
               ></textarea>
@@ -85,7 +85,7 @@ import { uploadString, ref, getDownloadURL } from "firebase/storage"
                           <PhotographIcon className="h-10 w-10 hoverEffect p-2 text-sky-700 hover:bg-sky-50"/>
                           <input type="file" hidden ref={filePickerRef} onChange={addImageToPost}/>
                       </div>
-                      <EmojiHappyIcon className="h-10 w-10 hoverEffect p-2 text-sky-700 hover:bg-sky-50"/>
+                      
                   </div>
                   <button onClick={sendPost}  disabled={!input.trim()} className="bg-blue-400 text-white px-4 py-1.5 rounded-full font-bold shadow-md hover:brightness-20 disabled:opacity-50" >Add</button>
                  </>

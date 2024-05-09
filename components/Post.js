@@ -122,7 +122,7 @@ export default function Post({post}) {
                 
 
                 <ShareIcon className="h-5 w-5 hover:text-sky-700 hover:bg-sky-100 hover:rounded-full"/>
-                <ChartBarIcon className="h-5 w-5 hover:text-sky-700 hover:bg-sky-100 hover:rounded-full"/>
+        
             </div>
 
         </div>
