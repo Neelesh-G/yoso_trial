@@ -1,37 +1,13 @@
 import {getProviders, signIn} from "next-auth/react"
 export default function signin({providers}) {
 
-    <p className="text-center text-xl  my-10">Welcome to Yoso, your biggest workplace advocate</p>
-
+        <div>
+            <h1>Testing Sign-In Page</h1>
+            <p>If you can see this, the sign-in page is loading correctly.</p>
+        </div>
     console.log("Received providers in component:", providers);
 
-    // Log each provider's name
-    Object.values(providers).forEach(provider => {
-        console.log("Provider name:", provider.name);
-    })
-
-    if (!providers || Object.keys(providers).length === 0) {
-        return <p>No providers available or providers data failed to load.</p>;
-    }if (!providers || Object.keys(providers).length === 0) {
-        return <p>No providers available or providers data failed to load.</p>;
-    }
-
-    return (
-        <div className="flex justify-center mt-40">
-
-            {Object.values(providers).map((provider)=>(
-                <div key={provider.name} className="flex flex-col items-center">
-                    
-
-            <p className="text-center text-xl  my-10">Welcome to Yoso, your biggest workplace advocate</p>
-
-            </div>
-            
-
-))}
-</div>
-        
-    )
+    
 }
 
 {/*import {getProviders, signIn} from "next-auth/react"
@@ -88,4 +64,6 @@ export async function getServerSideProps()
             providers,
         },
     }
-}
+
+} 
+    
