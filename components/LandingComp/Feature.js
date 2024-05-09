@@ -26,7 +26,7 @@ export default function Feature() {
     <div class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
       <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
         <h2 class="text-gray-900 text-lg title-font font-medium mb-2">Feature 2</h2>
-        <p class="leading-relaxed text-base">The second standout feature of Yoso is its AI-powered reporting system. This advanced feature generates comprehensive reports on an employee's achievements, including all endorsements received and an analysis of their work ethic. This aspect of the app is particularly beneficial during performance reviews, offering a detailed and accurate representation of an employee's contributions and capabilities. By highlighting these achievements, Yoso paves the way for rewards, benefits, and promotions, thereby incentivizing productivity and enhancing job satisfaction.
+        <p class="leading-relaxed text-base">The second standout feature of Yoso is its AI-powered reporting system. This advanced feature generates comprehensive reports on an employee&apos;s achievements, including all endorsements received and an analysis of their work ethic. This aspect of the app is particularly beneficial during performance reviews, offering a detailed and accurate representation of an employee's contributions and capabilities. By highlighting these achievements, Yoso paves the way for rewards, benefits, and promotions, thereby incentivizing productivity and enhancing job satisfaction.
 </p>
         <a class="mt-3 text-blue-500 inline-flex items-center">Learn More
           <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">

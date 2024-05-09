@@ -11,7 +11,7 @@ export default function Hero() {
       <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Welcome to Yoso, your biggest workplace advocate</h1>
       <p class="mb-8 leading-relaxed">Welcome to Yoso: Where Growth and Collaboration Thrive!
 
-      Yoso is poised to revolutionize the workplace as the ultimate advocate for employees. It addresses a significant gap in the corporate world: the under-recognition of employees' extra efforts and the inefficiencies in managing ad hoc projects alongside main tasks. Yoso introduces a dual-feature solution to tackle these challenges.
+      Yoso is poised to revolutionize the workplace as the ultimate advocate for employees. It addresses a significant gap in the corporate world: the under-recognition of employees&apos; extra efforts and the inefficiencies in managing ad hoc projects alongside main tasks. Yoso introduces a dual-feature solution to tackle these challenges.
 </p>
       <div class="flex justify-center">
         {/* bg-indigo-500 */}
