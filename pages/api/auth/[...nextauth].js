@@ -3,7 +3,7 @@ import GoogleProvider from "next-auth/providers/google"
 import { db } from '../../../firebase'; // Adjust the import path
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import admin from 'firebase-admin'
-
+/*
 if (!admin.apps.length) {
   admin.initializeApp({
     credential: admin.credential.cert({
@@ -12,7 +12,7 @@ if (!admin.apps.length) {
       privateKey: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n'),
     }),
   });
-}
+}*/
 
 export const authOptions = {
   // Configure one or more authentication providers

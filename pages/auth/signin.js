@@ -1,6 +1,5 @@
 import {getProviders, signIn} from "next-auth/react"
-export default function signin({providers}) {
-    console.log("Received providers in component:", providers);
+export default function signin() {
 return(
         <div>
             <h1>Testing Sign-In Page</h1>
