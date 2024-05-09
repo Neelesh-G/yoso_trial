@@ -1,6 +1,8 @@
 import {getProviders, signIn} from "next-auth/react"
 export default function signin({providers}) {
 
+    <p className="text-center text-xl  my-10">Welcome to Yoso, your biggest workplace advocate</p>
+
     console.log("Received providers in component:", providers);
 
     // Log each provider's name
@@ -9,6 +11,8 @@ export default function signin({providers}) {
     })
 
     if (!providers || Object.keys(providers).length === 0) {
+        return <p>No providers available or providers data failed to load.</p>;
+    }if (!providers || Object.keys(providers).length === 0) {
         return <p>No providers available or providers data failed to load.</p>;
     }
 
