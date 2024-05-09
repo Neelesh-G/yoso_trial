@@ -5,10 +5,11 @@ export default function signin({providers}) {
         <div className="flex justify-center mt-40">
 
             {Object.values(providers).map((provider)=>(
+                <div key={provider.name} className="flex flex-col items-center">
 
             <p className="text-center text-xl  my-10">Welcome to Yoso, your biggest workplace advocate</p>
 
-
+            </div>
 
 ))}
 </div>
