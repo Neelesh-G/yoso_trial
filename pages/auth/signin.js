@@ -49,6 +49,7 @@ export async function getServerSideProps()
 
 export async function getServerSideProps(context) {
     let providers = null;
+    console.log("hello world")
     try {
         providers = await getProviders();
         if (!providers) {
