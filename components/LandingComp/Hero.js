@@ -15,7 +15,7 @@ export default function Hero() {
 </p>
       <div class="flex justify-center">
         {/* bg-indigo-500 */}
-        <button class="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Login with Teans</button>
+        <button class="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Login with Teams</button>
         <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Login with Google</button>
       </div>
     </div>
