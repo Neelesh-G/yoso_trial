@@ -1,9 +1,11 @@
+//import {getProviders, signIn} from "next-auth/react"
+export default function signin() {
 
-export default function TestSignIn() {
     return (
         <div>
             <h1>Testing Sign-In Page</h1>
             <p>If you can see this, the sign-in page is loading correctly.</p>
+            <p>This is the secon paragraph</p>
         </div>
     );
 }
