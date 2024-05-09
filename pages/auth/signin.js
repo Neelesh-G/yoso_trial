@@ -1,5 +1,5 @@
 //import {getProviders, signIn} from "next-auth/react"
-export default function signin() {
+export default function signin({providers}) {
 
     return (
         <div>
