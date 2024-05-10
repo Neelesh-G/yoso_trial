@@ -55,7 +55,7 @@ secret:process.env.SECRET,
       return session;
     },*/
     async session({session, token, user})
-    {
+    {    
     session.user.username=session.user.name
         .split(" ")
         .join("")
@@ -81,7 +81,8 @@ secret:process.env.SECRET,
   
         if (!docSnap.exists()) {
           await setDoc(userRef, {
-            id:session.user.uid,
+            //id:session.user.uid,
+            id:user.id,
             name: user.name, 
             email: user.email, 
             image: user.image, 
